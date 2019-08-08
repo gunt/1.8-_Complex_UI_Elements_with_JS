@@ -9,8 +9,9 @@ body {
     box-sizing: border-box;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
+    /*be carefull is % instead of px */
+    width: 100%;   
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
 
     /* to show it above another content */
@@ -24,6 +25,10 @@ body {
     text-align: center;
 }
 
+#modal-container.is-visible {
+    /* CSS for modal container - add your own desired CSS styles here */
+    display: block;
+  }
 
 .modal {
     margin:auto;
