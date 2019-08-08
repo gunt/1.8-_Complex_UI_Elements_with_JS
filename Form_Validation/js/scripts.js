@@ -4,8 +4,10 @@
     var $passwordInput = document.querySelector('#password');
 
         function validateEmail() {
-
-            return false;
+            var value = $emailInput.value;
+            var hasAtSign = value.indexOf('@') > -1;
+            var hasDot = value.indexOf('.') > -1;
+            return value && hasAtSign && hasDot;
         }
 
         function validatePassword() {
