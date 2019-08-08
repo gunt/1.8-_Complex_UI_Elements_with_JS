@@ -11,9 +11,28 @@
         }
 
         function validatePassword() {
-
-            return false;
+            var value = $passwordInput.value;
+            return value && value.lenght >= 8;
         }
+
+        // Generic function to show an error message for an input field
+        function showErrorMessage($input, message) {
+            var $container = $input.parentElement; // The .input-wrapper
+        }
+
+        // Remove an existing error
+        var error = $container.querySelector('.errormessage');
+        if (error) {
+            $container.removeChild(error);
+        }
+
+        // Now add the error if the message isn't empty
+        if (message) {
+            var error = document.createElement('div');
+            error.classsList.add('error-message');
+            error.innerText = message;
+            $container.appendChild(error);
+         }  
 
         function validateForm() {
 
