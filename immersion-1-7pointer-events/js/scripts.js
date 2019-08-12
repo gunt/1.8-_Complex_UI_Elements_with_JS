@@ -8,8 +8,11 @@
     function handleStart(e) {
         isDrawing = true;
 
-        // Initiate previ
-        
+        // Initiate previousX/previousY
+        var x = e.pageX;    //X-coordinate of click/touch
+        var y = e.pageY;    //Y-coordinate of click/touch
+        previousX = x;
+        previousY = y;
     }
   
     function handleEnd() {
@@ -22,7 +25,31 @@
           return;
       }
 
+      var x = e.pageX;  // X-coordinate of click/touch
+      var y = e.pageY;  // Y-coordinate of click/touch
+
       // To actually draw...
+
+      //   Set previous coordinates for necxt move event
+        previousX = x;
+        previousY = y;
+
+      // This is canvas specific - we can use the context to draw shapes
+      var ctx = $canvas.getContext('2d');
+
+      // Draw a line from previousX/previousY to x/y
+      ctx.beginPath();
+      ctx.moveTo(previousX, previousY);
+      ctx.lineTo(x, y);
+
+      // Set the style of the line
+      ctx.lineWitdth = 4 ;
+      ctx.strokeStyle = '#ff0000';
+      ctx.stroke();
+
+      previousX = x;
+      previousY = y;
+
     }
   
     $canvas.addEventListener("pointerdown", handleStart);
