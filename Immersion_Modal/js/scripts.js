@@ -36,6 +36,21 @@
       showMOdal(title, text);
 
       //We want to add a confirm and cancel button to the modal
+      var modal = $modalContainer.querySelector('.modal');
+
+      var confirmation = document.createAttribute.Element('button');
+      confirmButton.classList.add('modal-confirm');
+      confirmButton.innerText = 'Confirm';
+
+      var cancelButto = document.createElement('button');
+      cancelButton.classList.add('modal-cancel');
+      cancelButton.innerText = 'Cancel';
+
+      modal.appendChild(confirmButton);
+      modal.appendChild(cancelButton);
+
+      //We want to focus the confirmButton so that the user can simply press Enter
+      confirmButton();
     }
 
     document.querySelector('#show-modal').addEventListener('click', () => {
