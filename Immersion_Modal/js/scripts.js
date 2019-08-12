@@ -32,6 +32,12 @@
       $modalContainer.classList.remove('is-visible');
     }
     
+    function showDialog(title, text){
+      showMOdal(title, text);
+
+      //We want to add a confirm and cancel button to the modal
+    }
+
     document.querySelector('#show-modal').addEventListener('click', () => {
       showModal('Modal title', 'This is the modal content!');
     });
